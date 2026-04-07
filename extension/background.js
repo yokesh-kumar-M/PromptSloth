@@ -15,4 +15,15 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
         return true; 
     }
+    
+    if (request.action === "get_templates") {
+        fetch('http://localhost:8000/api/templates/')
+            .then(res => res.json())
+            .then(data => sendResponse({ templates: data }))
+            .catch(error => {
+                console.error('Template fetch Error:', error);
+                sendResponse({ templates: [] });
+            });
+        return true;
+    }
 });
