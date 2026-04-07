@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { width: 300px; font-family: sans-serif; padding: 10px; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 5px; box-sizing: border-box; }
+        button { background: #6366f1; color: white; border: none; padding: 8px; cursor: pointer; width: 100%; border-radius: 4px; }
+        .template-list { margin-top: 15px; border-top: 1px solid #ccc; padding-top: 10px; }
+        .template-item { margin-bottom: 5px; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <h3>PromptSloth Templates</h3>
+    <input type="text" id="title" placeholder="Title">
+    <input type="text" id="shortcut" placeholder="Shortcut (e.g. //refactor)">
+    <textarea id="content" placeholder="Template Content"></textarea>
+    <button id="saveBtn">Save Template</button>
+    <div class="template-list" id="templateList"></div>
+    <script src="popup.js"></script>
+</body>
+</html>

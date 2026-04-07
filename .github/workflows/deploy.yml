@@ -1,0 +1,48 @@
+name: Deploy PromptSloth
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-extension:
+    name: Build Chrome Extension
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Zip Extension
+        run: |
+          cd extension
+          zip -r ../prompt-sloth-extension.zip .
+          
+      - name: Upload Extension Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: prompt-sloth-extension
+          path: prompt-sloth-extension.zip
+
+  test-backend:
+    name: Test Django Backend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Django Checks
+        run: |
+          python manage.py check
+          python manage.py makemigrations --check --dry-run
