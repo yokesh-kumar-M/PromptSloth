@@ -42,7 +42,7 @@ document.addEventListener('input', function(event) {
 function showTemplateMenu(target) {
     if (!templatePopup) {
         templatePopup = document.createElement('div');
-        templatePopup.id = 'prompt-sloth-menu';
+        templatePopup.id = 'prompt-enhancer-menu';
         templatePopup.style.cssText = `
             position: absolute;
             z-index: 10000;
@@ -116,10 +116,10 @@ function updateText(target, text) {
 }
 
 function showFloatingButton(target) {
-    let btn = document.getElementById('prompt-sloth-btn');
+    let btn = document.getElementById('prompt-enhancer-btn');
     if (!btn) {
         btn = document.createElement('button');
-        btn.id = 'prompt-sloth-btn';
+        btn.id = 'prompt-enhancer-btn';
         btn.innerHTML = '✨';
         btn.title = "Enhance Prompt";
         btn.style.cssText = `
@@ -169,7 +169,7 @@ function showFloatingButton(target) {
 
 document.addEventListener('focusout', (e) => {
     setTimeout(() => {
-        const btn = document.getElementById('prompt-sloth-btn');
+        const btn = document.getElementById('prompt-enhancer-btn');
         if (btn && e.relatedTarget !== btn) {
             btn.style.display = 'none';
         }

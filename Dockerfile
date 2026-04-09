@@ -20,4 +20,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 # Command to run the application
-CMD ["gunicorn", "--worker-class", "gthread", "--workers", "3", "--threads", "2", "prompt_sloth_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "--worker-class", "gthread", "--workers", "3", "--threads", "2", "prompt_enhancer_backend.wsgi:application", "--bind", "0.0.0.0:8000"]

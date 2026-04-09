@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:15-alpine
     environment:
-      POSTGRES_DB: prompt_sloth
+      POSTGRES_DB: prompt_enhancer
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres_password
     volumes:
@@ -23,7 +23,7 @@ services:
       - DEBUG=True
       - SECRET_KEY=django-insecure-local-dev-key
       - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
-      - DATABASE_URL=postgres://postgres:postgres_password@db:5432/prompt_sloth
+      - DATABASE_URL=postgres://postgres:postgres_password@db:5432/prompt_enhancer
       - CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost:8000
     depends_on:
       - db

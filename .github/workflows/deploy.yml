@@ -1,4 +1,4 @@
-name: Deploy PromptSloth
+name: Deploy PromptEnhancer
 
 on:
   push:
@@ -17,13 +17,13 @@ jobs:
       - name: Zip Extension
         run: |
           cd extension
-          zip -r ../prompt-sloth-extension.zip .
+          zip -r ../prompt-enhancer-extension.zip .
           
       - name: Upload Extension Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: prompt-sloth-extension
-          path: prompt-sloth-extension.zip
+          name: prompt-enhancer-extension
+          path: prompt-enhancer-extension.zip
 
   test-backend:
     name: Test Django Backend
