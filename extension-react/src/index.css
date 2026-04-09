@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-base: #09090B;
+  --color-surface-elevated: rgba(24, 24, 27, 0.7);
+  --color-panel: #18181b;
+  --color-magic-primary: #8B5CF6;
+  --color-magic-hover: #A78BFA;
+  --color-magic-ring: rgba(139, 92, 246, 0.5);
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #A1A1AA;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --font-sans: 'Geist Sans', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-surface-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle Gradient Mesh for Popup Background */
+.gradient-mesh {
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.1), transparent 25%);
+  background-size: 100% 100%;
+}
+
+
