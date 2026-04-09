@@ -14,10 +14,18 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Zip Extension
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies and build
         run: |
-          cd extension
-          zip -r ../prompt-enhancer-extension.zip .
+          cd extension-react
+          npm ci
+          npm run build
+          cd dist
+          zip -r ../../prompt-enhancer-extension.zip .
           
       - name: Upload Extension Artifact
         uses: actions/upload-artifact@v4
@@ -35,7 +43,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install Dependencies
         run: |
