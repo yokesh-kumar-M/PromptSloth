@@ -10,24 +10,32 @@
   --color-text-primary: #FAFAFA;
   --color-text-secondary: #A1A1AA;
   --color-border-subtle: rgba(255, 255, 255, 0.1);
-  --font-sans: 'Geist Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-surface-base);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
+  background-color: #09090B;
+  color: #FAFAFA;
+  font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle Gradient Mesh for Popup Background */
-.gradient-mesh {
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.1), transparent 25%);
-  background-size: 100% 100%;
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
